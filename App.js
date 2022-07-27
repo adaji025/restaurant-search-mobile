@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import Header from './src/components/Header';
+import { StyleSheet, View } from 'react-native';
+import Header from './src/components/Header'
 import SearchBar from './src/components/SearchBar';
 
 export default function App() {
@@ -15,6 +15,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    marginLeft: 25
+  
+    
   },
 });
