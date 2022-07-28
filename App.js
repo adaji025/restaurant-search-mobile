@@ -9,7 +9,7 @@ export default function App() {
     <View style={styles.container}>
       <Header />
       <SearchBar />
-      <CategoryItem />
+      <CategoryItem name='burger' imageUrl={require("./src/assets/images/burger.png")} />
       <StatusBar style="auto" />
     </View>
   );

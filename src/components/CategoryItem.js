@@ -1,16 +1,16 @@
 import { View, StyleSheet, Text, Image } from "react-native";
 import { elevation } from "../common/styles";
 
-const CategoryItem = () => {
+const CategoryItem = ({name, imageUrl}) => {
   return (
     <View style={[styles.container, styles.elevation]}>
       <View style={styles.imageContainer}>
         <Image
-          source={require("../assets/images/burger.png")}
+          source={imageUrl}
           style={styles.image}
         />
       </View>
-      <Text style={styles.itemName}>Burger</Text>
+      <Text style={styles.itemName}>{name}</Text>
     </View>
   );
 };
