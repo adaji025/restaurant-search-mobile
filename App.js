@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
-import { StyleSheet, View, FlatList } from "react-native";
+import { StyleSheet, View } from "react-native";
+import Categories from "./src/components/Categories";
 import CategoryItem from "./src/components/CategoryItem";
 import Header from "./src/components/Header";
 import SearchBar from "./src/components/SearchBar";
@@ -34,30 +35,11 @@ export const commonCartegory = [
 
 export default function App() {
   const [term, setTerm] = useState("burger");
-
-  // setTimeout(() => {
-  //   setTerm('pizza')
-  // }, 3000)
-
   return (
     <View style={styles.container}>
       <Header />
       <SearchBar setTerm={setTerm} term={term} />
-      <FlatList
-        data={commonCartegory}
-        renderItem={({ item, index }) => (
-          <CategoryItem
-            name={item.name}
-            imageUrl={item.imageUrl}
-            index={index}
-            active={item.name === term}
-            handlePress={() => setTerm(item.name)}
-          />
-        )}
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        keyExtractor={(item) => item.name}
-      />
+     <Categories commonCartegory={commonCartegory} setTerm={setTerm} term={term} />
       <StatusBar style="auto" />
     </View>
   );

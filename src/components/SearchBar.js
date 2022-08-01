@@ -18,7 +18,7 @@ const SearchBar = ({ setTerm, term }) => {
         placeholder="Restaurant, food"
         style={styles.input}
         value={input}
-        onChangeText={(text) => setInput(text)}
+        onChangeText={(text) => setInput(text.toLocaleLowerCase())}
         onEndEditing={handleEndEditing}
       />
     </View>
