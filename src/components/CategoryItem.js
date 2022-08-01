@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   itemName: {
-    fontWeight: 700,
+    fontWeight: '700',
     textTransform: "capitalize",
   },
 });

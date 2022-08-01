@@ -5,8 +5,7 @@ import CategoryItem from "./src/components/CategoryItem";
 import Header from "./src/components/Header";
 import SearchBar from "./src/components/SearchBar";
 
-
-export  const commonCartegory = [
+export const commonCartegory = [
   {
     name: "burger",
     imageUrl: require("./src/assets/images/burger.png"),
@@ -29,23 +28,21 @@ export  const commonCartegory = [
   },
   {
     name: "steak",
-    imageUrl: require("./src/assets/images/steak.png")
+    imageUrl: require("./src/assets/images/steak.png"),
   },
 ];
 
-
 export default function App() {
-const [searchTerm, setSearchTerm] = useState('burger')
+  const [term, setTerm] = useState("burger");
 
-setTimeout(() => {
-  setSearchTerm('pizza')
-}, 3000)
+  // setTimeout(() => {
+  //   setTerm('pizza')
+  // }, 3000)
 
- 
   return (
     <View style={styles.container}>
       <Header />
-      <SearchBar />
+      <SearchBar setTerm={setTerm} term={term} />
       <FlatList
         data={commonCartegory}
         renderItem={({ item, index }) => (
@@ -53,13 +50,13 @@ setTimeout(() => {
             name={item.name}
             imageUrl={item.imageUrl}
             index={index}
-            active={item.name === searchTerm}
-            handlePress={() => setSearchTerm(item.name)}
+            active={item.name === term}
+            handlePress={() => setTerm(item.name)}
           />
         )}
         horizontal
         showsHorizontalScrollIndicator={false}
-        keyExtractor={item => item.name}
+        keyExtractor={(item) => item.name}
       />
       <StatusBar style="auto" />
     </View>

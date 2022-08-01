@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   
   delicious: {
     fontSize: 40,
-    fontWeight: 700
+    fontWeight: '700',
   }
 })
 
