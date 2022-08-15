@@ -4,6 +4,7 @@ import { StyleSheet, View } from "react-native";
 import Categories from "./src/components/Categories";
 import CategoryItem from "./src/components/CategoryItem";
 import Header from "./src/components/Header";
+import Restaurant from "./src/components/Restaurant";
 import SearchBar from "./src/components/SearchBar";
 
 export const commonCartegory = [
@@ -39,7 +40,12 @@ export default function App() {
     <View style={styles.container}>
       <Header />
       <SearchBar setTerm={setTerm} term={term} />
-     <Categories commonCartegory={commonCartegory} setTerm={setTerm} term={term} />
+      <Categories
+        commonCartegory={commonCartegory}
+        setTerm={setTerm}
+        term={term}
+      />
+      <Restaurant />
       <StatusBar style="auto" />
     </View>
   );
