@@ -45,7 +45,7 @@ export default function App() {
         setTerm={setTerm}
         term={term}
       />
-      <Restaurant />
+      <Restaurant term={term} />
       <StatusBar style="auto" />
     </View>
   );

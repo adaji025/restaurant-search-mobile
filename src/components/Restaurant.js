@@ -3,14 +3,14 @@ import { StyleSheet, Text, View } from 'react-native'
 import useRestaurant from '../hooks/useRestaurant'
 
 
-const Restaurant = () => {
+const Restaurant = ({term}) => {
   const [{data, loading, error}, searchRestaurants] = useRestaurant()
 
   useEffect(() => {
-    searchRestaurants()
-  })
+    searchRestaurants(term)
+  }, [term])
 
-  console.log(data, loading, error)
+  console.log({data, loading, error})
   return (
     <View style={styles.container}>
         <Text style={styles.header}>Top Restaurants</Text>
